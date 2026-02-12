@@ -12,7 +12,7 @@ a collection of some wallpapers i use
 ![Image Nine](img/9.jpg)
 ![Image Ten](img/10.png)
 ![Image Eleven](img/11.png)
-![Image Twelve](img/12.jpgg)
+![Image Twelve](img/12.jpg)
 ![Image Thirteen](img/13.png)
 ![Image Fourteen](img/14.png)
 ![Image Fifteen](img/15.png)
