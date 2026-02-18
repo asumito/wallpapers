@@ -23,3 +23,5 @@ a collection of some wallpapers i use
 ![Image Twenty](img/20.png)
 ![Image Twenty-one](img/21.png)
 ![Image Twenty-two](img/22.gif)
+![Image Twenty-three](img/23.jpg)
+![Image Twenty-Four](img/24.jpg)    
