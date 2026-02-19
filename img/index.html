@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Wallpapers</title>
+
+<style>
+body {
+  margin: 0;
+  background: #0b0b0b;
+  color: white;
+  font-family: system-ui, sans-serif;
+  text-align: center;
+}
+
+h1 {
+  padding: 20px;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  padding: 20px;
+}
+
+.gallery img {
+  width: 100%;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 15px 30px rgba(0,0,0,.6);
+}
+
+@media (max-width: 900px) {
+  .gallery { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 500px) {
+  .gallery { grid-template-columns: 1fr; }
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.9);
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox img {
+  max-width: 95%;
+  max-height: 95%;
+  border-radius: 10px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Wallpapers</h1>
+
+<div class="gallery" id="gallery"></div>
+
+<div class="lightbox" id="lightbox">
+  <img id="lightbox-img">
+</div>
+
+<script>
+const files = [
+"1.jpg","2.jpg","3.jpg","4.png","5.png","6.png","7.png","8.png","9.jpg",
+"10.png","11.png","12.jpg","13.png","14.png","15.png","16.jpg","17.png","18.jpg","19.jpg",
+"20.png","21.png","22.gif","23.jpg","24.jpg","27.jpg",
+"2512.jpg","2515.jpg","2519.jpg","2523.jpg","2526.jpg","2528.jpg","2530.jpg","2532.jpg","2533.jpg",
+"2535.jpg","2536.jpg","2537.jpg","2538.jpg","2540.jpg","2541.jpg","2542.jpg","2544.jpg","2545.jpg",
+"2546.jpg","2547.jpg","2549.jpg",
+"255.jpg","2551.jpg","2553.jpg","2554.jpg","2555.jpg","2556.jpg","2557.jpg","2558.jpg",
+"256.jpg","2560.jpg","2561.jpg","257.jpg","259.jpg"
+];
+
+const gallery = document.getElementById("gallery");
+
+files.sort((a,b)=>a.localeCompare(b,undefined,{numeric:true}));
+
+files.forEach(file => {
+  const img = document.createElement("img");
+  img.src = "img/" + file;
+  img.loading = "lazy";
+
+  img.onclick = () => {
+    document.getElementById("lightbox-img").src = img.src;
+    document.getElementById("lightbox").style.display = "flex";
+  };
+
+  gallery.appendChild(img);
+});
+
+document.getElementById("lightbox").onclick = () => {
+  document.getElementById("lightbox").style.display = "none";
+};
+</script>
+
+</body>
+</html>
+
