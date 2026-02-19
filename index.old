@@ -107,4 +107,3 @@ document.getElementById("lightbox").onclick = () => {
 
 </body>
 </html>
-
